@@ -191,6 +191,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torjan Horse Optical
       objectReference: {fileID: 0}
+    - target: {fileID: 9095323641151965972, guid: 10eaf80e19c28e7469e4b917c6dab11e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10eaf80e19c28e7469e4b917c6dab11e, type: 3}
 --- !u!1001 &43677794
@@ -847,6 +852,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1108491121}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1260220797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8423005714052591658, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_Name
+      value: Teddy Bear Optical
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.755
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546090302133061747, guid: 7376af97317c10949a37043062ffb08a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7376af97317c10949a37043062ffb08a, type: 3}
 --- !u!1 &1305003850
 GameObject:
   m_ObjectHideFlags: 0
