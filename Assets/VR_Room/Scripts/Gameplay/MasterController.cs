@@ -23,7 +23,7 @@ public class MasterController : MonoBehaviour
     
     [Header("Reference")]
     public XRRayInteractor RightTeleportInteractor;
-    public XRRayInteractor LeftTeleportInteractor;
+    //public XRRayInteractor LeftTeleportInteractor;
 
     public XRDirectInteractor RightDirectInteractor;
     public XRDirectInteractor LeftDirectInteractor;
@@ -46,10 +46,10 @@ public class MasterController : MonoBehaviour
     XRReleaseController m_LeftController;
 
     bool m_PreviousRightClicked = false;
-    bool m_PreviousLeftClicked = false;
+    //bool m_PreviousLeftClicked = false;
 
     bool m_LastFrameRightEnable = false;
-    bool m_LastFrameLeftEnable = false;
+    //bool m_LastFrameLeftEnable = false;
 
     LayerMask m_OriginalRightMask;
     LayerMask m_OriginalLeftMask;
@@ -78,14 +78,14 @@ public class MasterController : MonoBehaviour
         m_RightLineVisual = RightTeleportInteractor.GetComponent<XRInteractorLineVisual>();
         m_RightLineVisual.enabled = false;
 
-        m_LeftLineVisual = LeftTeleportInteractor.GetComponent<XRInteractorLineVisual>();
-        m_LeftLineVisual.enabled = false;
+        //m_LeftLineVisual = LeftTeleportInteractor.GetComponent<XRInteractorLineVisual>();
+        //m_LeftLineVisual.enabled = false;
 
         m_RightController = RightTeleportInteractor.GetComponent<XRReleaseController>();
-        m_LeftController = LeftTeleportInteractor.GetComponent<XRReleaseController>();
+        //m_LeftController = LeftTeleportInteractor.GetComponent<XRReleaseController>();
 
         m_OriginalRightMask = RightTeleportInteractor.interactionLayerMask;
-        m_OriginalLeftMask = LeftTeleportInteractor.interactionLayerMask;
+        //m_OriginalLeftMask = LeftTeleportInteractor.interactionLayerMask;
         
         if (!DisableSetupForDebug)
         {
@@ -140,7 +140,7 @@ public class MasterController : MonoBehaviour
             Application.Quit();
         
         RightTeleportUpdate();
-        LeftTeleportUpdate();
+        //LeftTeleportUpdate();
     }
 
     void RightTeleportUpdate()
@@ -185,42 +185,42 @@ public class MasterController : MonoBehaviour
         m_LastFrameRightEnable = m_RightLineVisual.enabled;
     }
 
-    void LeftTeleportUpdate()
-    {
-        Vector2 axisInput;
-        m_LeftInputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisInput);
+    //void LeftTeleportUpdate()
+    //{
+    //    Vector2 axisInput;
+    //    m_LeftInputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisInput);
         
-        m_LeftLineVisual.enabled = axisInput.y > 0.5f;
+    //    m_LeftLineVisual.enabled = axisInput.y > 0.5f;
         
-        LeftTeleportInteractor.InteractionLayerMask = m_LastFrameLeftEnable ? m_OriginalLeftMask : new LayerMask();
+    //    LeftTeleportInteractor.InteractionLayerMask = m_LastFrameLeftEnable ? m_OriginalLeftMask : new LayerMask();
         
-        if (axisInput.y <= 0.5f && m_PreviousLeftClicked)
-        {
-            m_LeftController.Select();
-        }
+    //    if (axisInput.y <= 0.5f && m_PreviousLeftClicked)
+    //    {
+    //        m_LeftController.Select();
+    //    }
         
-        if (axisInput.y <= -0.5f)
-        {
-            if(!LeftTractorBeam.IsTracting)
-                LeftTractorBeam.StartTracting();
-        }
-        else if(LeftTractorBeam.IsTracting)
-        {
-            LeftTractorBeam.StopTracting();
-        }
+    //    if (axisInput.y <= -0.5f)
+    //    {
+    //        if(!LeftTractorBeam.IsTracting)
+    //            LeftTractorBeam.StartTracting();
+    //    }
+    //    else if(LeftTractorBeam.IsTracting)
+    //    {
+    //        LeftTractorBeam.StopTracting();
+    //    }
         
-        //if the left animator is null, we try to get it. It's not the best performance wise but no other way as setup
-        //of the model by the Interaction Toolkit is done on the first update.
-        if (m_LeftHandPrefab == null)
-        {
-            m_LeftHandPrefab = LeftDirectInteractor.GetComponentInChildren<HandPrefab>();
-        }
+    //    //if the left animator is null, we try to get it. It's not the best performance wise but no other way as setup
+    //    //of the model by the Interaction Toolkit is done on the first update.
+    //    if (m_LeftHandPrefab == null)
+    //    {
+    //        m_LeftHandPrefab = LeftDirectInteractor.GetComponentInChildren<HandPrefab>();
+    //    }
 
-        m_PreviousLeftClicked = axisInput.y > 0.5f;
+    //    m_PreviousLeftClicked = axisInput.y > 0.5f;
         
-        if (m_LeftHandPrefab != null)
-            m_LeftHandPrefab.Animator.SetBool("Pointing", m_PreviousLeftClicked);
+    //    if (m_LeftHandPrefab != null)
+    //        m_LeftHandPrefab.Animator.SetBool("Pointing", m_PreviousLeftClicked);
         
-        m_LastFrameLeftEnable = m_LeftLineVisual.enabled;
-    }
+    //    m_LastFrameLeftEnable = m_LeftLineVisual.enabled;
+    //}
 }
