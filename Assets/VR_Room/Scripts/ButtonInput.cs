@@ -35,7 +35,7 @@ public class XRBinding
         device.TryGetFeatureValue(XRStatics.GetFeature(button), out isPressed);
         if (isPressed)
         {
-            Debug.Log("some button was pressed\n");
+            //Debug.Log("some button was pressed\n");
         }
         bool active = false;
 

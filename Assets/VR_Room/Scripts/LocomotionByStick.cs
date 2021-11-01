@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LocomotionByStick : MonoBehaviour
 {
-    public float speed = 0.8f;
+    public float speed;
     public Transform xrRigTransform;
     public Transform camTransform;
     public Transform headsetTransform;
