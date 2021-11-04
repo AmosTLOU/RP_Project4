@@ -13,7 +13,7 @@ public class LiftCurtain : MonoBehaviour
     {
         if(text_rectTransform.anchoredPosition.y < 1000)
             text_rectTransform.anchoredPosition += Vector2.up * speed_text * Time.deltaTime;
-        if(text_rectTransform.anchoredPosition.y >= -200 && panel_rectTransform.anchoredPosition.y < 700)
+        if(text_rectTransform.anchoredPosition.y >= -300 && panel_rectTransform.anchoredPosition.y < 700)
             panel_rectTransform.anchoredPosition += Vector2.up * speed_panel * Time.deltaTime;
 
     }

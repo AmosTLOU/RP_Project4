@@ -30,7 +30,6 @@ public class CollectItem : MonoBehaviour
         {
             if (col.gameObject.name == target_gameobjects[i].name)
             {
-                //if (HaveToReleaseItem && col.gameObject.transform.Find("ScriptObj").GetComponent<ModifyStatus>().selected)
                 if (HaveToReleaseItem && col.gameObject.GetComponent<StatusMonitor>().Selected())
                     return;
                 images[i].gameObject.SetActive(true);
@@ -40,9 +39,8 @@ public class CollectItem : MonoBehaviour
                 return;
             }
         }
-        if(col.gameObject.CompareTag("ItemToGrab"))
+        if (col.gameObject.layer == 8)
         {
-            Debug.Log(Time.fixedTime.ToString("f6"));
             m_audio_wrong.Play();
             StartCoroutine(ShowResponseText(""));
         }

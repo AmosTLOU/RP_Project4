@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - CollectItem
     - ContactSoundPlayer
     - DialInteractable
+    - DistanceGrab_Customed
     - FuseBox
     - HandPrefab
     - LiftCurtain
@@ -328,6 +329,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 16404}
     - Class: 114
       Script: {instanceID: 16410}
+    - Class: 114
+      Script: {instanceID: 23708}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1831,7 +1834,7 @@ ScriptsOnlyBuild:
     className: Light2D
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 0b137895a34f6b664cef2e986f925489
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StatusMonitor
@@ -1889,7 +1892,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
     className: VFXUISliderBinder
+  - hash:
+      serializedVersion: 2
+      Hash: 1a62cca690ab07df8fa6a47152a8d6d6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DistanceGrab_Customed
   platform: 13
   scenePathNames:
   - Assets/MyScenes/MyScene.unity
-  playerPath: F:/Code/Unity_Projects/2019.4.9f1/VR_2/Build/MyScene_20211101.apk
+  playerPath: F:/Code/Unity_Projects/2019.4.9f1/VR_2/Build/MyScene_20211104.apk

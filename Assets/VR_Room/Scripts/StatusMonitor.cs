@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class StatusMonitor : MonoBehaviour
 {
+    public GameObject Targeted;
+
     private bool m_selected;
+    private bool m_aimed;
     private bool is_kinematic;
     private float speed;
 
@@ -16,6 +19,7 @@ public class StatusMonitor : MonoBehaviour
     private void Start()
     {
         m_selected = false;
+        m_aimed = false;
         is_kinematic = gameObject.GetComponent<Rigidbody>().isKinematic;
         speed = 1f;        
         original_position = transform.position;
@@ -23,6 +27,27 @@ public class StatusMonitor : MonoBehaviour
         original_scale = transform.localScale;
         
     }
+
+    private void Update()
+    {
+        if (m_aimed) {
+            Targeted.SetActive(true);
+            Targeted.transform.eulerAngles = Camera.main.transform.eulerAngles; 
+        }
+        else
+            Targeted.SetActive(false);
+    }
+
+    public void ChangeTo_Aimed()
+    {
+        m_aimed = true;
+    }
+
+    public void ChangeTo_DeAimed()
+    {
+        m_aimed = false;
+    }
+
     public bool Selected()
     {
         return m_selected;
@@ -38,6 +63,14 @@ public class StatusMonitor : MonoBehaviour
         m_selected = false;
         if(gameObject.activeSelf)
             BackToOriginalStatus();
+    }
+
+    public bool InOriginalStatus()
+    {
+        return 
+            (transform.position == original_position &&
+            transform.rotation == original_rotation &&
+            transform.localScale == original_scale);
     }
 
     public void BackToOriginalStatus()
