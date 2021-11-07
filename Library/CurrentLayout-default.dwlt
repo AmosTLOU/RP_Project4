@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 3}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 1
-  controlID: 35
+  controlID: 152
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -70,7 +70,7 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 679
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &4
 MonoBehaviour:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 36
+  controlID: 153
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 63
+  controlID: 62
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -399,9 +399,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.7931185, y: -0.13540292, z: 29.35031}
+    m_Target: {x: -42.51551, y: -9.305752, z: -10.161127}
     speed: 2
-    m_Value: {x: 5.7931185, y: -0.13540292, z: 29.35031}
+    m_Value: {x: -42.51551, y: -9.305752, z: -10.161127}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -447,13 +447,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.026623266, y: 0.07320728, z: -0.0020016169, w: 0.9970091}
+    m_Target: {x: -0.06989804, y: 0.81025296, z: -0.098658204, w: -0.573561}
     speed: 2
-    m_Value: {x: 0.026618913, y: 0.07469901, z: -0.0020414481, w: 0.99684876}
+    m_Value: {x: -0.0707546, y: 0.810063, z: -0.0998685, w: -0.5734265}
   m_Size:
-    m_Target: 14.517502
+    m_Target: 22.0014
     speed: 2
-    m_Value: 1.23887
+    m_Value: 17.960327
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -506,24 +506,24 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 32}
-      m_SelectedIDs: e2800000
-      m_LastClickedID: 32994
-      m_ExpandedIDs: d2cbfeffbce8feff0833ffff9848ffff5880000060800000f88000006c8100009a810000
+      scrollPos: {x: 0, y: 48}
+      m_SelectedIDs: caf4ffff
+      m_LastClickedID: -2870
+      m_ExpandedIDs: 64fbfffffa440000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: AudioObj
-        m_OriginalName: AudioObj
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 32868
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -572,34 +572,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/VR_Room/Models/NewModels
+    - Assets/VR_Room/Models/NewModels/Yoda/YodaModels
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/VR_Room/Models/NewModels
+  - Assets/VR_Room/Models/NewModels/Yoda/YodaModels
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\TORUBEGO\Documents\GitHub\RP_Project4
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 161}
-    m_SelectedIDs: e2850000
-    m_LastClickedID: 34274
-    m_ExpandedIDs: 0000000092560000c8840000ca840000cc840000ce840000d0840000d2840000d4840000d6840000ea840000e2850000e6850000ea850000ee85000000ca9a3b
+    m_SelectedIDs: c8570000
+    m_LastClickedID: 22472
+    m_ExpandedIDs: 0000000010420000985300009a5300009c5300009e530000a0530000a2530000a4530000a65300000c54000038540000e854000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Level 2 Textures
-      m_OriginalName: Level 2 Textures
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 37232
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -613,7 +613,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 26980100
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000092560000c8840000ca840000cc840000ce840000d0840000d2840000d4840000d6840000
+    m_ExpandedIDs: 0000000010420000985300009a5300009c5300009e530000a0530000a2530000a4530000a6530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -644,15 +644,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: fc470000e847000084470000b6270000002b0000e8a7fdff52defdff0000000060090100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Level 3 Models
-      m_OriginalName: Level 3 Models
+      m_Name: YodaModels
+      m_OriginalName: YodaModels
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 59330
+      m_UserData: 22472
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -707,3 +707,28 @@ MonoBehaviour:
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12059, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor:UnityEditor.PackageManager.UI:PackageManagerProjectSettings
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Failed to load
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 320
+    height: 550
+  m_ViewDataDictionary: {fileID: 0}
