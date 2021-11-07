@@ -1,6 +1,18 @@
-Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.9f1/Editor/Data/PlaybackEngines'
+Base path: 'D:/UnityHub/Unity Hub/2019.4.13f1c1/Editor/Data', plugins path 'D:/UnityHub/Unity Hub/2019.4.13f1c1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=9103 outsize=2745 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1971 outsize=1398 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=8211 outsize=4682 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7003 outsize=2480 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7216 outsize=6970 ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=11032 outsize=922 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+  api=4 type=1 insize=8574 outsize=218 kw= pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_LIGHTMAP_DLDR_ENCODING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2364 outsize=3650 kw=_MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE pd=UNITY_NO_DXT5nm UNITY_ENABLE_REFLECTION_BUFFERS UNITY_NO_CUBEMAP_ARRAY UNITY_NO_SCREENSPACE_SHADOWS UNITY_PBS_USE_BRDF2 SHADER_API_DESKTOP UNITY_LIGHTMAP_DLDR_ENCODING ok=1
 
 Quitting shader compiler process
