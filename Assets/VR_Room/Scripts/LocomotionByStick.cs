@@ -9,13 +9,13 @@ public class LocomotionByStick : MonoBehaviour
     public Transform camTransform;
     public Transform headsetTransform;
     public Transform ControllerOffsetTransform;
-        
-  
+
+
     void Update()
-    {        
+    {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        if(moveHorizontal != 0 || moveVertical != 0)
+        if (moveHorizontal != 0 || moveVertical != 0)
         {
             Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
             float y = camTransform.rotation.eulerAngles.y;

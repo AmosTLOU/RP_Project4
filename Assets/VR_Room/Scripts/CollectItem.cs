@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class CollectItem : MonoBehaviour
 {
@@ -18,11 +20,11 @@ public class CollectItem : MonoBehaviour
 
     void Start()
     {
-        foreach(var item in images)
+        foreach (var item in images)
             item.gameObject.SetActive(false);
         Text_ResponseToAnswer.text = "";
     }
-    
+
     // can't use onCollisionEnter anymore after set ClipBoard to kinematic
     private void OnTriggerEnter(Collider col)
     {
@@ -30,7 +32,7 @@ public class CollectItem : MonoBehaviour
         {
             if (col.gameObject.name == target_gameobjects[i].name)
             {
-                if (HaveToReleaseItem && col.gameObject.GetComponent<StatusMonitor>().Selected())
+                if (HaveToReleaseItem && col.gameObject.GetComponent<XRGrabInteractable>().isSelected)
                     return;
                 images[i].gameObject.SetActive(true);
                 col.gameObject.SetActive(false);
@@ -44,7 +46,7 @@ public class CollectItem : MonoBehaviour
             m_audio_wrong.Play();
             StartCoroutine(ShowResponseText(""));
         }
-            
+
     }
 
     IEnumerator ShowResponseText(string name)
@@ -58,7 +60,7 @@ public class CollectItem : MonoBehaviour
         {
             Text_ResponseToAnswer.text = "Well... Let's try again!";
             yield return new WaitForSeconds(2);
-        }        
+        }
         Text_ResponseToAnswer.text = "";
 
         //int fps = (int)(1f / Time.deltaTime);

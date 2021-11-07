@@ -20,7 +20,7 @@ public class ClipBoardControl : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position.y < 0)
+        if (transform.position.y < 0.2)
         {
             SceneManager.LoadScene(0);
         }
@@ -30,6 +30,12 @@ public class ClipBoardControl : MonoBehaviour
     {
         this.transform.position = LeftControllerTransform.parent.TransformPoint(LeftControllerTransform.localPosition - dst_from_lefthand);
         float y = camTransform.rotation.eulerAngles.y;
-        this.transform.rotation = Quaternion.Euler(original_rotation.x, original_rotation.y + y, original_rotation.z) ;
+        this.transform.rotation = Quaternion.Euler(original_rotation.x, original_rotation.y + y, original_rotation.z);
     }
+
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.name == "Floor")
+    //        SceneManager.LoadScene(0);
+    //}
 }
