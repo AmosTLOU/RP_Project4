@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class StatusMonitor : MonoBehaviour
 {
-    public GameObject Targeted;
+    //public GameObject Targeted;
+    private GameObject Targeted;
 
     private bool m_selected;
     private bool m_aimed;
@@ -18,24 +19,35 @@ public class StatusMonitor : MonoBehaviour
 
     private void Start()
     {
+        Targeted = transform.Find("Targeted").gameObject;
         m_selected = false;
         m_aimed = false;
         is_kinematic = gameObject.GetComponent<Rigidbody>().isKinematic;
-        speed = 1f;        
+        speed = 1f;
         original_position = transform.position;
         original_rotation = transform.rotation;
         original_scale = transform.localScale;
-        
+
     }
 
     private void Update()
     {
-        if (m_aimed) {
+        if (m_aimed)
+        {
             Targeted.SetActive(true);
-            Targeted.transform.eulerAngles = Camera.main.transform.eulerAngles; 
+            Targeted.transform.eulerAngles = Camera.main.transform.eulerAngles;
         }
         else
             Targeted.SetActive(false);
+        if (GetComponent<XRGrabInteractable>().isSelected)
+            m_selected = true;
+        else
+        {
+            if (m_selected)
+                BackToOriginalStatus();
+            m_selected = false;
+        }
+
     }
 
     public void ChangeTo_Aimed()
@@ -48,26 +60,26 @@ public class StatusMonitor : MonoBehaviour
         m_aimed = false;
     }
 
-    public bool Selected()
-    {
-        return m_selected;
-    }
+    //public bool Selected()
+    //{
+    //    return m_selected;
+    //}
 
-    public void ChangeTo_Selected()
-    {
-        m_selected = true;
-    }
+    //public void ChangeTo_Selected()
+    //{
+    //    m_selected = true;
+    //}
 
-    public void ChangeTo_DeSelected()
-    {
-        m_selected = false;
-        if(gameObject.activeSelf)
-            BackToOriginalStatus();
-    }
+    //public void ChangeTo_DeSelected()
+    //{
+    //    m_selected = false;
+    //    if (gameObject.activeSelf)
+    //        BackToOriginalStatus();
+    //}
 
     public bool InOriginalStatus()
     {
-        return 
+        return
             (transform.position == original_position &&
             transform.rotation == original_rotation &&
             transform.localScale == original_scale);
@@ -85,6 +97,7 @@ public class StatusMonitor : MonoBehaviour
         {
             StartCoroutine(GetBack());
         }
+        gameObject.GetComponent<Rigidbody>().isKinematic = is_kinematic;
     }
 
     IEnumerator GetBack()
