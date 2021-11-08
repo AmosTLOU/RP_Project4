@@ -19,6 +19,8 @@ public class CollectItem : MonoBehaviour
 
     public TextMeshProUGUI Text_ResponseToAnswer;
 
+    private int cnt;
+
     void Start()
     {
         foreach (var item in images)
@@ -26,6 +28,7 @@ public class CollectItem : MonoBehaviour
         foreach (var item in images_check)
             item.gameObject.SetActive(false);
         Text_ResponseToAnswer.text = "";
+        cnt = 0;
     }
 
     // can't use onCollisionEnter anymore after set ClipBoard to kinematic
@@ -41,6 +44,7 @@ public class CollectItem : MonoBehaviour
                 images_check[i].gameObject.SetActive(true);
                 col.gameObject.SetActive(false);
                 m_audio_correct.Play();
+                cnt++;
                 StartCoroutine(ShowResponseText(col.gameObject.name));
                 return;
             }
@@ -57,7 +61,10 @@ public class CollectItem : MonoBehaviour
     {
         if (name != "")
         {
-            Text_ResponseToAnswer.text = "Correct!";
+            if(cnt < images.Length)
+                Text_ResponseToAnswer.text = "Correct!";
+            else
+                Text_ResponseToAnswer.text = "You Win!";
             yield return new WaitForSeconds(8);
         }
         else

@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "There is a magical land! \r\nA live \"3D I spy book\" appears in front
+  m_text: "There is a magical land! \r\nA live 3D \"I spy book\" appears in front
     of you! \r\nTry to find the targets! Use your perception and creativity to get
     them all out!\r\nSincerely,\r\nPenny\r\nYifei\r\nWendy\r\nAmos\r\nDeb"
   m_isRightToLeft: 0

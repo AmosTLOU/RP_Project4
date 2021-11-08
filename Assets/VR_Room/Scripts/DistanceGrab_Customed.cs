@@ -45,7 +45,7 @@ public class DistanceGrab_Customed : MonoBehaviour
             //Debug.Log("ObjSummoned is null");
         }
 
-        if (ObjSummoned.GetComponent<StatusMonitor>().JustRelease())
+        if (ObjSummoned && ObjSummoned.GetComponent<StatusMonitor>().JustRelease())
         {
             audio_release.Play();
         }
