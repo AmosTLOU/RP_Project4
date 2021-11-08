@@ -16,10 +16,17 @@ public class StatusMonitor : MonoBehaviour
     private Vector3 original_position;
     private Quaternion original_rotation;
     private Vector3 original_scale;
+    private Material originial_material;
+    //private Material highlight_material;
+    private bool m_JustRelease;
+
+    public Material highlight_material;
 
     private void Start()
     {
-        Targeted = transform.Find("Targeted").gameObject;
+        //Targeted = transform.Find("Targeted").gameObject;
+        //if(Targeted)
+        //    Targeted.SetActive(false);
         m_selected = false;
         m_aimed = false;
         is_kinematic = gameObject.GetComponent<Rigidbody>().isKinematic;
@@ -27,18 +34,24 @@ public class StatusMonitor : MonoBehaviour
         original_position = transform.position;
         original_rotation = transform.rotation;
         original_scale = transform.localScale;
-
+        originial_material = GetComponent<Renderer>().material;
+        //highlight_material = new Material(Shader.Find("Shader Graphs/FireBoiShader"));
+        m_JustRelease = false;
     }
 
     private void Update()
     {
         if (m_aimed)
         {
-            Targeted.SetActive(true);
-            Targeted.transform.eulerAngles = Camera.main.transform.eulerAngles;
+            //Targeted.SetActive(true);
+            //Targeted.transform.eulerAngles = Camera.main.transform.eulerAngles;
+            GetComponent<Renderer>().material = highlight_material;
         }
         else
-            Targeted.SetActive(false);
+        {
+            //Targeted.SetActive(false);
+            GetComponent<Renderer>().material = originial_material;
+        }
         if (GetComponent<XRGrabInteractable>().isSelected)
             m_selected = true;
         else
@@ -60,11 +73,11 @@ public class StatusMonitor : MonoBehaviour
         m_aimed = false;
     }
 
-    //public bool Selected()
-    //{
-    //    return m_selected;
-    //}
-
+    public bool JustRelease()
+    {
+        return m_JustRelease;
+    }
+    
     //public void ChangeTo_Selected()
     //{
     //    m_selected = true;
@@ -87,6 +100,8 @@ public class StatusMonitor : MonoBehaviour
 
     public void BackToOriginalStatus()
     {
+        if (!gameObject.activeSelf)
+            return;
         if (!is_kinematic)
         {
             transform.position = original_position;
@@ -102,6 +117,7 @@ public class StatusMonitor : MonoBehaviour
 
     IEnumerator GetBack()
     {
+        m_JustRelease = true;
         Vector3 position_transit;
         Quaternion rotation_transit;
         Vector3 scale_transit;
@@ -117,6 +133,7 @@ public class StatusMonitor : MonoBehaviour
             transform.rotation = rotation_transit;
             transform.localScale = scale_transit;
             yield return null;
+            m_JustRelease = false;
         }
     }
 

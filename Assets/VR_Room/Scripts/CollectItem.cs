@@ -11,6 +11,7 @@ public class CollectItem : MonoBehaviour
 {
     public bool HaveToReleaseItem;
     public Image[] images;
+    public Image[] images_check;
     public GameObject[] target_gameobjects;
 
     public AudioSource m_audio_correct;
@@ -21,6 +22,8 @@ public class CollectItem : MonoBehaviour
     void Start()
     {
         foreach (var item in images)
+            item.gameObject.SetActive(false);
+        foreach (var item in images_check)
             item.gameObject.SetActive(false);
         Text_ResponseToAnswer.text = "";
     }
@@ -35,6 +38,7 @@ public class CollectItem : MonoBehaviour
                 if (HaveToReleaseItem && col.gameObject.GetComponent<XRGrabInteractable>().isSelected)
                     return;
                 images[i].gameObject.SetActive(true);
+                images_check[i].gameObject.SetActive(true);
                 col.gameObject.SetActive(false);
                 m_audio_correct.Play();
                 StartCoroutine(ShowResponseText(col.gameObject.name));
@@ -53,12 +57,12 @@ public class CollectItem : MonoBehaviour
     {
         if (name != "")
         {
-            Text_ResponseToAnswer.text = name + " is a correct answer!";
+            Text_ResponseToAnswer.text = "Correct!";
             yield return new WaitForSeconds(8);
         }
         else
         {
-            Text_ResponseToAnswer.text = "Well... Let's try again!";
+            Text_ResponseToAnswer.text = "Try again!";
             yield return new WaitForSeconds(2);
         }
         Text_ResponseToAnswer.text = "";

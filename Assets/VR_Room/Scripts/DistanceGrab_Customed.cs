@@ -8,6 +8,8 @@ public class DistanceGrab_Customed : MonoBehaviour
     public Transform controllerTransform;
     public float maxDistance;
     public LineRenderer beam;
+    public AudioSource audio_summon;
+    public AudioSource audio_release;
 
     private GameObject ObjAimed;
     private GameObject ObjSummoned;
@@ -41,6 +43,11 @@ public class DistanceGrab_Customed : MonoBehaviour
         else
         {
             //Debug.Log("ObjSummoned is null");
+        }
+
+        if (ObjSummoned.GetComponent<StatusMonitor>().JustRelease())
+        {
+            audio_release.Play();
         }
     }
 
@@ -101,6 +108,7 @@ public class DistanceGrab_Customed : MonoBehaviour
     {
         if (ObjAimed && !ObjSummoned)
         {
+            audio_summon.Play();
             ObjAimed.GetComponent<Rigidbody>().isKinematic = true;
             ObjAimed.GetComponent<StatusMonitor>().ChangeTo_DeAimed();
             //ObjAimed.transform.position = controllerTransform.parent.TransformPoint(controllerTransform.localPosition + new Vector3(-0.1f, 0.1f, 0f));
